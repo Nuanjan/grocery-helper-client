@@ -52,10 +52,8 @@ const chPwFailure = function () {
 }
 
 const signoutSuccess = function () {
-  // Form reset:
-  $('form').trigger('reset')
-
-  // Messaging:
+  $('.row').hide()
+  store.user.token = null
   $('#message').text('Good Bye! ')
 }
 
@@ -64,11 +62,6 @@ const signoutFailure = function () {
   // Select the message element, change its text, and display it
   // Change the text:
   $('#message').text('Sign Out Failed, You still here!')
-  // Show the element:
-  $('#message').show()
-  // Remove all the classes, then add the failure class
-  $('#message').removeClass()
-  $('#message').addClass('failure')
 }
 
 module.exports = {

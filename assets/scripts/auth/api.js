@@ -38,7 +38,7 @@ const credChPw = function (data) {
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
     headers: {
-      Authorization: 'Bearer' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     },
     data: {
       passwords: {
@@ -53,7 +53,7 @@ const credSignOut = function () {
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
     headers: {
-      Authorization: 'Bearer' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

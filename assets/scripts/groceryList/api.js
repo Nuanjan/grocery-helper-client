@@ -3,8 +3,6 @@ const config = require('./../config')
 const store = require('./../store')
 
 const groceryListCreate = function (data) {
-  console.log(store.user._id)
-  console.log(store.user.token)
   console.log('this is data in groceryListCreate\n', data)
   return $.ajax({
     method: 'POST',
@@ -22,7 +20,7 @@ const groceryListCreate = function (data) {
 }
 
 const groceryListIndex = () => {
-  console.log('this is owner from api ', store.user._id)
+  console.log(store.user._id)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/groceryLists',
