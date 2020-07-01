@@ -11,6 +11,7 @@ const signupSuccess = function (response) {
 }
 
 const signupFailure = function () {
+  $('form').trigger('reset')
   // Show a error message
   // Select the message element, change its text, and display it
   // Change the text:
@@ -29,6 +30,7 @@ const signinSuccess = function (response) {
 }
 
 const signinFailure = function () {
+  $('form').trigger('reset')
   // Show a error message
   // Select the message element, change its text, and display it
   // Change the text:

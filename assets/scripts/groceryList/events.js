@@ -2,6 +2,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const store = require('./../store')
 
 const onGroceryListCreate = function (event) {
   event.preventDefault()
@@ -24,14 +25,33 @@ const onGroceryListIndex = function (event) {
 const onGroceryListRemove = function (event) {
   event.preventDefault()
   const groceryListId = $(event.target).data('id')
-  console.log(groceryListId)
+
   api.groceryListRemove(groceryListId)
     .then(() => ui.removeSuccess(groceryListId))
     .catch(ui.removeFailure)
 }
 
+const onGroceryListClickEdit = () => {
+  event.preventDefault()
+  $('#edit-list-section').show()
+  $('.row').hide()
+  store.groceryList._id = event.target.dataset.id
+}
+
+const onGroceryListUpdate = (event) => {
+  event.preventDefault()
+  console.log(event)
+  const form = event.target
+  const data = getFormFields(form)
+  api.groceryListUpdate(data)
+    .then(ui.updateSucccess)
+    .catch(ui.updateFailure)
+}
+
 module.exports = {
   onGroceryListCreate,
   onGroceryListIndex,
-  onGroceryListRemove
+  onGroceryListRemove,
+  onGroceryListClickEdit,
+  onGroceryListUpdate
 }

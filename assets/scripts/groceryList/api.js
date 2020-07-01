@@ -47,8 +47,20 @@ const groceryListRemove = (groceryListId) => {
     }
   })
 }
+
+const groceryListUpdate = (data) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/groceryLists/' + store.groceryList._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
 module.exports = {
   groceryListCreate,
   groceryListIndex,
-  groceryListRemove
+  groceryListRemove,
+  groceryListUpdate
 }

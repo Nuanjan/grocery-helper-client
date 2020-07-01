@@ -1,6 +1,5 @@
 
 {{#each groceryLists as |groceryList|}}
-  {{log groceryList}}
   <div class="row" data-id="{{groceryList._id}}">
       <div class="column">
     <span>Title:&nbsp</span>{{groceryList.title}}
@@ -9,8 +8,8 @@
         <span>List:&nbsp</span>{{limit groceryList.list 15}}
       </div>
       <div class="column">
-        <button class="btn btn-danger view-list-btn" data-id="{{groceryList._id}}">View</button>
-        <button class="btn btn-danger delete-list" data-id="{{groceryList._id}}">Remove</button>
+        <button class="btn btn-danger edit-list-btn" data-id="{{groceryList._id}}">Edit</button>
+        <button class="btn btn-danger delete-list-btn" data-id="{{groceryList._id}}">Remove</button>
       </div>
     </div>
 {{/each}}
