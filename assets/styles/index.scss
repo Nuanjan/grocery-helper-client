@@ -1,1 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+.content {
+  @include make-container;
+ }
+.row {
+  @include make-row;
+}
+.column {
+  margin: 10px 0 0 0;
+  @include make-col(4);
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.btn {
+  margin: 10px;
+}

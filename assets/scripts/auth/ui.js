@@ -22,6 +22,7 @@ const signupFailure = function () {
 const signinSuccess = function (response) {
   // Form reset:
   store.user = response.user
+  console.log(store.user)
   $('form').trigger('reset')
   // Messaging:
   $('#message').text('Welcome back! ' + response.user.email)
