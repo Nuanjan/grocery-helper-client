@@ -103,7 +103,6 @@ const onGroceryClickCreate = () => {
   $('.flex-list').show()
   $('#create-list-btn').hide()
   $('#view-list-btn').hide()
-
 }
 module.exports = {
   onGroceryListCreate,
