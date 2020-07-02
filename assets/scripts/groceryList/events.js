@@ -78,6 +78,7 @@ const onGroceryListClickView = () => {
   $('.row').hide()
   $('#create-list-btn').hide()
   $('#view-list-btn').hide()
+
   // save the id data to the store.groceryList.id to pass to api
   store.groceryList._id = event.target.dataset.id
   // request get single list from api
