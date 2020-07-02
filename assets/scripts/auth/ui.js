@@ -32,7 +32,7 @@ const signinSuccess = function (response) {
   $('#view-list-btn').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  $('body').css('background-image', 'url(/public/5.jpg)')
+  $('body').css('background-image', 'url(public/5.jpg)')
   $('h1').hide()
   $('#ch-pw').show()
   $('#sign-out').show()
