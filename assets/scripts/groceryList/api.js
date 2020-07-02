@@ -56,9 +56,20 @@ const groceryListUpdate = (data) => {
     data
   })
 }
+
+const groceryListView = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/groceryLists/' + store.groceryList._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
   groceryListCreate,
   groceryListIndex,
   groceryListRemove,
-  groceryListUpdate
+  groceryListUpdate,
+  groceryListView
 }

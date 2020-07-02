@@ -14,64 +14,79 @@
     <body>
       <h1>Grocery-Helper Application</h1>
       <p id="message"></p>
-      <section id="sec-sign-up">
-          <h1>Sign Up</h1>
+      <section id="sec-auth">
           <form id="sign-up">
+            <h1>Sign Up</h1>
             <input placeholder="email" type="email"
             name="credentials[email]" required>
             <input placeholder="password" type="password"
             name="credentials[password]" required>
             <input placeholder="confirm password" type="password"
             name="credentials[password_confirmation]" required>
-            <button type="submit">sign up</button>
+            <button class="button-small salmon_dark rounded3" type="submit">sign up</button>
           </form>
-        </section>
+
         <section>
-        <h1>Sign In</h1>
         <form id="sign-in">
+          <h1>Sign In</h1>
           <input placeholder="email" type="email"
           name="credentials[email]" required>
           <input placeholder="password" type="password"
           name="credentials[password]" required>
-          <button type="submit">sign In</button>
+          <button class="button-small salmon_dark rounded3" type="submit">sign In</button>
         </form>
       </section>
+        </section>
+
       <section>
         <div id="ch-pw">
-        <h3>Change Password</h3>
-        <p id="ch-msg"></p>
         <form id="change-pw">
+          <h3>Change Password</h3>
           <input placeholder="Old Password" type="password"
           name="passwords[old]" required>
           <input placeholder="New password" type="password"
           name="passwords[new]" required>
-          <button type="submit">change Password</button>
+          <button class="button-small salmon_dark rounded3" type="submit">change Password</button>
         </form>
       </div>
       </section>
       <section>
-    <button id="sign-out">Sign Out</button>
+    <button class="button-small salmon_dark rounded3" id="sign-out">Sign Out</button>
   </section>
-<section id="list-controller">
-<h2>Welcome to Grocery Helper!</h2>
-<h4>Start create your grocery list before you forget things!</h4>
+<section class="hide">
+<div class="wrap">
+  <h2>Welcome to Grocery Helper!</h2>
+  <h4>Start create your grocery list before you forget things!</h4>
+<section class="list-controller">
+<button class="btn btn-outline-danger" id="create-list-btn">Create a New List</button>
+</section>
+<section class="flex-list">
 <form id="create-list">
   <input placeholder="Title" type="text" name="groceryList[title]">
-  <input class="list-filed" placeholder="List" type="text" name="groceryList[list]">
-  <button type="submit">Create a New List</button>
+  <textarea name="groceryList[list]" rows="10" cols="50"></textarea>
+<!-- <input class="list-filed" placeholder="List" type="text" name="groceryList[list]"> -->
+  <button type="submit">Create List</button>
 </form>
-
-<button id="view-list-btn">View The List</button>
 </section>
+<section class="list-controller">
+<button class="btn btn-outline-danger" id="view-list-btn">View The List</button>
+<section id="edit-list-section">
+  <section class="flex-new-list">
+  <form id="edit-list">
+    <input placeholder="New Title" type="text" name="groceryList[title]">
+    <textarea name="groceryList[list]" rows="10" cols="50"></textarea>
+    <button type="submit">Save New List</button>
+  </form>
+  </section>
+</section>
+<ul class="single-list"></ul>
+<button class="btn btn-outline-danger" id="go-back" type="submit">Go back</button>
 <main>
   <div id="content" class="content"></div>
 </main>
-<section id="edit-list-section">
-  <form id="edit-list">
-    <input placeholder="New Title" type="text" name="groceryList[title]">
-    <input class="list-filed" placeholder="New List" type="text" name="groceryList[list]">
-    <button type="submit">Save New List</button>
-  </form>
 </section>
+</div>
+</section>
+
     </body>
 </html>

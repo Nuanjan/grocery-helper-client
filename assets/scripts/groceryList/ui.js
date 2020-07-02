@@ -7,7 +7,10 @@ const createSuccess = function (response) {
   store.groceryList = response.groceryList
   console.log(store.groceryList)
   $('#message').text('Creat List success')
-//  store.groceryLists = response.groceryLists
+  //  store.groceryLists = response.groceryLists
+  $('.flex-list').hide()
+  $('#create-list-btn').show()
+  $('#view-list-btn').show()
 }
 const createFailure = function () {
   $('form').trigger('reset')
@@ -15,7 +18,9 @@ const createFailure = function () {
   // Select the message element, change its text, and display it
   // Change the text:
   $('#message').text('Create List failed!')
-  // Show the element:
+  $('.flex-list').hide()
+  $('#create-list-btn').show()
+  $('#view-list-btn').show()
 }
 
 const indexSuccess = (data) => {
@@ -43,6 +48,17 @@ const updateFailure = () => {
   $('form').trigger('reset')
   $('#message').text('Update List Failed!')
 }
+
+const viewSuccess = (response) => {
+  console.log(response)
+  $('.single-list').show()
+  $('.single-list').text(`title: ${response.groceryList.title}`).append('<li>list:   ' + response.groceryList.list + '</li>')
+  $('#message').text('View List Success!')
+  $('#go-back').show()
+}
+const viewFailure = () => {
+  $('#message').text('View List Failed!')
+}
 module.exports = {
   createSuccess,
   createFailure,
@@ -50,5 +66,7 @@ module.exports = {
   removeFailure,
   removeSuccess,
   updateSucccess,
-  updateFailure
+  updateFailure,
+  viewSuccess,
+  viewFailure
 }

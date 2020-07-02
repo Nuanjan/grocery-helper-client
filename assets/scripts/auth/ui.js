@@ -5,7 +5,7 @@ const store = require('./../store')
 const signupSuccess = function (response) {
   // Form reset:
   $('form').trigger('reset')
-
+  $('#sign-up').hide()
   // Messaging:
   $('#message').text('Welcome! ' + response.user.email)
 }
@@ -26,7 +26,16 @@ const signinSuccess = function (response) {
   console.log(store.user)
   $('form').trigger('reset')
   // Messaging:
+  $('.hide').show()
   $('#message').text('Welcome back! ' + response.user.email)
+  $('#create-list-btn').show()
+  $('#view-list-btn').show()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('body').css('background-image', 'url(./../../public/5.jpg)')
+  $('h1').hide()
+  $('#ch-pw').show()
+  $('#sign-out').show()
 }
 
 const signinFailure = function () {
@@ -55,6 +64,13 @@ const signoutSuccess = function () {
   $('.row').hide()
   store.user.token = null
   $('#message').text('Good Bye! ')
+  $('.wrap').hide()
+  $('#ch-pw').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('h1').show()
+  $('body').css('background-image', 'url(./../../public/2.jpg)')
 }
 
 const signoutFailure = function () {

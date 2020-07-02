@@ -8,8 +8,11 @@
         <span>List:&nbsp</span>{{limit groceryList.list 15}}
       </div>
       <div class="column">
-        <button class="btn btn-danger edit-list-btn" data-id="{{groceryList._id}}">Edit</button>
-        <button class="btn btn-danger delete-list-btn" data-id="{{groceryList._id}}">Remove</button>
+        <button class="btn btn-warning edit-list-btn" data-id="{{groceryList._id}}">Edit</button>
+        <button class="btn btn-warning view-list-btn" data-id="{{groceryList._id}}">View</button>
+        <button class="btn btn-warning delete-list-btn" data-id="{{groceryList._id}}">Remove</button>
       </div>
     </div>
+  {{else}}
+<h6>No Grocery List to View!</h6>
 {{/each}}

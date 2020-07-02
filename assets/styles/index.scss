@@ -1,6 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
+h1{
+  text-align: right;
+  margin: 30px;
+  color: #652a0e;
+}
+h2{
+  text-align: center;
+  color: #dd571c;
+}
+h4 {
+  text-align: center;
+  color: #dd571c;
+}
+body{
+background-image: url(./../../public/2.jpg);
+background-size: cover;
+}
+
+
+
 .content {
   @include make-container;
+  clear: both;
  }
 .row {
   @include make-row;
@@ -14,4 +35,126 @@
 }
 .btn {
   margin: 10px;
+}
+
+.single-list {
+font-size: 24px;
+}
+
+.list-controller {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.wrap{
+  margin: 250px auto;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.button-small{
+    color: #fff !important;
+    word-spacing: 0.25em;
+   font-family: 'Open Sans', sans-serif;
+   text-transform: uppercase;
+   border: none;
+    line-height: 22px;
+    padding: 12px 13px 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+.button-small:visited{
+      color: #fff;
+}
+.button-small{
+    padding: 6px 12px 5px;
+    font-size: 11px;
+    color: #fff;
+    text-shadow: none;
+}
+.button-small:hover{
+    color: rgba(255,255,255, 0.75);
+    text-decoration: none;
+    box-shadow: inset 0 10px 20px rgba(0.20,0.07,0, 0.30);
+}
+.button-small:active {
+    box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+}
+.rounded3 {
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.salmon_dark {
+    background: #8A1215;
+}
+.flex-list {
+  display: none;
+
+}
+.flex-new-list {
+  display: none;
+clear: both;
+width: 100%;
+
+}
+.hide {
+  display: none;
+}
+
+#create-list {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+}
+#edit-list {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+}
+
+#go-back {
+   display: none;
+}
+#sign-up {
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+#sign-in {
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+#ch-pw {
+   display: none;
+}
+
+#sign-out {
+   display: none;
+}
+
+#sec-auth {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+#edit-list-section {
+  display: none;
+}
+
+#message {
+  text-align: right
+  margin 30px;
 }
