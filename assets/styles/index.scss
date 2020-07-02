@@ -17,8 +17,6 @@ background-image: url(public/2.jpg);
 background-size: cover;
 }
 
-
-
 .content {
   @include make-container;
   clear: both;
@@ -47,11 +45,12 @@ font-size: 28px;
   margin: 20px;
 }
 .wrap{
-  margin: 250px auto;
+  margin: 100px auto;
   float: left;
   display: flex;
   flex-direction: column;
   width: 50%;
+  clear: both;
 }
 
 .button-small{
@@ -159,4 +158,10 @@ width: 100%;
   text-align: right;
   font-size: 24px;
   color: #234f1e;
+  float:right;
+}
+#ch-pw {
+  float: left;
+  margin: 10px;
+  position: absolute;
 }

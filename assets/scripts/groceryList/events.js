@@ -104,6 +104,7 @@ const onGroceryClickCreate = () => {
   $('#create-list-btn').hide()
   $('#view-list-btn').hide()
 }
+
 module.exports = {
   onGroceryListCreate,
   onGroceryListIndex,
@@ -113,4 +114,5 @@ module.exports = {
   onGroceryListClickView,
   onGoBack,
   onGroceryClickCreate
+  // readList
 }

@@ -5,7 +5,7 @@ const createSuccess = function (response) {
   $('form').trigger('reset')
   // Messaging:
   store.groceryList = response.groceryList
-  console.log(store.groceryList)
+  console.log('this is list we create', store.groceryList)
   $('#message').text('Creat List success')
   //  store.groceryLists = response.groceryLists
   $('.flex-list').hide()
@@ -42,6 +42,7 @@ const updateSucccess = () => {
   $('#edit-list-section').hide()
   $('form').trigger('reset')
   $('#message').text('Update List success!')
+  $('#edit-list').hide()
 }
 
 const updateFailure = () => {
