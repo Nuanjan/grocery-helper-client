@@ -55,9 +55,9 @@ const viewSuccess = (response) => {
   store.groceryList.list = response.groceryList.list
   store.groceryList.list = response.groceryList.list
   const lines = store.groceryList.list.split(/\n/g)
-  $('.single-list').text(`title: ${response.groceryList.title}`).css('color', '#8A1215')
+  $('.single-list').text(`Title:  ${response.groceryList.title}`).css('color', '#8A1215')
   for (let i = 0; i < lines.length - 1; i++) {
-    $('.single-list').append('<li>' + (i + 1) + ': ' + lines[i] + '</li>')
+    $('.single-list').append('<li>' + lines[i] + '</li>')
   }
   $('.single-list').show()
   $('#message').text('View List Success!')
