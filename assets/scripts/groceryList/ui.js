@@ -48,17 +48,24 @@ const updateSucccess = () => {
 const updateFailure = () => {
   $('form').trigger('reset')
   $('#message').text('Update List Failed!')
+  $('#edit-list').hide()
 }
 
 const viewSuccess = (response) => {
-  console.log(response)
+  store.groceryList.list = response.groceryList.list
+  store.groceryList.list = response.groceryList.list
+  const lines = store.groceryList.list.split(/\n/g)
+  $('.single-list').text(`title: ${response.groceryList.title}`).css('color', '#8A1215')
+  for (let i = 0; i < lines.length - 1; i++) {
+    $('.single-list').append('<li>' + (i + 1) + ': ' + lines[i] + '</li>')
+  }
   $('.single-list').show()
-  $('.single-list').text(`title: ${response.groceryList.title}`).append('<li>list:   ' + response.groceryList.list + '</li>')
   $('#message').text('View List Success!')
   $('#go-back').show()
 }
 const viewFailure = () => {
   $('#message').text('View List Failed!')
+  $('#edit-list').hide()
 }
 module.exports = {
   createSuccess,

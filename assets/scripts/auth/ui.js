@@ -36,6 +36,7 @@ const signinSuccess = function (response) {
   $('h1').hide()
   $('#ch-pw').show()
   $('#sign-out').show()
+  $('.wrap').show()
 }
 
 const signinFailure = function () {
@@ -52,12 +53,15 @@ const chPwSuccess = function () {
   $('form').trigger('reset')
   // Messaging:
   $('#message').text('Password changed! ')
+  $('#go-back').hide()
 }
+
 
 const chPwFailure = function () {
   // Show a error message
   $('#change-pw')[0].reset()
   $('#message').text('Password Change Failed, Try agin!')
+  $('#go-back').hide()
 }
 
 const signoutSuccess = function () {
@@ -70,7 +74,8 @@ const signoutSuccess = function () {
   $('#sign-up').show()
   $('#sign-in').show()
   $('h1').show()
-  $('body').css('background-image', 'url(./../../public/2.jpg)')
+  $('body').css('background-image', 'url(public/2.jpg)')
+  $('#go-back').hide()
 }
 
 const signoutFailure = function () {
@@ -78,6 +83,7 @@ const signoutFailure = function () {
   // Select the message element, change its text, and display it
   // Change the text:
   $('#message').text('Sign Out Failed, You still here!')
+  $('#go-back').hide()
 }
 
 module.exports = {

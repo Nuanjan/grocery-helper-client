@@ -12,9 +12,10 @@ h4 {
   text-align: center;
   color: #dd571c;
 }
-body{
+body {
 background-image: url(public/2.jpg);
 background-size: cover;
+background-repeat: no-repeat;
 }
 
 .content {
@@ -23,16 +24,17 @@ background-size: cover;
  }
 .row {
   @include make-row;
+  background-color: white;
+  opacity: 80%;
 }
 .column {
   margin: 10px 0 0 0;
   @include make-col(4);
   text-align: center;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  color: #8A1215;
 }
 .btn {
-  margin: 10px;
+  margin: 5px;
 }
 
 .single-list {
@@ -144,6 +146,7 @@ width: 100%;
 }
 
 #sec-auth {
+  clear: right;
   float: right;
   display: flex;
   flex-direction: column;
@@ -164,4 +167,156 @@ width: 100%;
   float: left;
   margin: 10px;
   position: absolute;
+}
+
+@media (max-width: 1250px) {
+  .content {
+    @include make-container;
+    clear: both;
+   }
+  .row {
+    @include make-row;
+    background-color: white;
+    opacity: 80%;
+  }
+  .column {
+    margin: 10px 0 0 0;
+    @include make-col(2);
+    text-align: center;
+    color: #8A1215;
+  }
+  body {
+  background-size: cover;
+  background-position: center;
+}
+
+body:after{
+      content:"";
+      position:fixed; /* stretch a fixed position to the whole screen */
+      top:0;
+      height:100vh; /* fix for mobile browser address bar appearing disappearing */
+      left:0;
+      right:0;
+      z-index:-1; /* needed to keep in the background */
+      background-image: url(public/2.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+}
+
+@media (max-width: 770px) {
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  body {
+  background-size: cover;
+  background-position: center;
+}
+
+body:after{
+      content:"";
+      position:fixed; /* stretch a fixed position to the whole screen */
+      top:0;
+      height:100vh; /* fix for mobile browser address bar appearing disappearing */
+      left:0;
+      right:0;
+      z-index:-1; /* needed to keep in the background */
+      background-image: url(public/2.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+h2{
+  text-align: center;
+  color: #dd571c;
+}
+h4 {
+  text-align: center;
+  color: #dd571c;
+}
+.content {
+  @include make-container;
+  clear: both;
+ }
+.row {
+  @include make-row;
+}
+.column {
+  margin: 10px 0 0 0;
+  @include make-col(4);
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.btn {
+  margin: 10px;
+}
+
+.single-list {
+font-size: 28px;
+}
+
+.list-controller {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.wrap{
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  clear: both;
+}
+
+.flex-new-list {
+clear: both;
+width: 100%;
+
+}
+#create-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+}
+#edit-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+}
+
+#sec-auth {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+#message {
+  clear:left;
+  margin: 120px auto;
+  text-align: center;
+  font-size: 24px;
+  color: #8A1215;
+}
+#ch-pw {
+  float: left;
+  margin: 10px;
+  position: absolute;
+}
+.column {
+  margin: 10px 0 0 0;
+  @include make-col(4);
+  text-align: center;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
 }

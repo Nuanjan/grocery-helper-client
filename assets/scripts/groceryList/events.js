@@ -52,6 +52,7 @@ const onGroceryListClickEdit = () => {
   $('#create-list-btn').hide()
   // show the title and list field for edit.
   $('.flex-new-list').show()
+  $('#edit-list').show()
   // save the id data to the store.groceryList.id to pass to api
   store.groceryList._id = event.target.dataset.id
 }
@@ -61,6 +62,7 @@ const onGroceryListUpdate = (event) => {
   console.log(event)
   const form = event.target
   const data = getFormFields(form)
+  $('#edit-list').show()
   api.groceryListUpdate(data)
     .then(ui.updateSucccess)
     .catch(ui.updateFailure)
@@ -80,6 +82,7 @@ const onGroceryListClickView = () => {
   $('#view-list-btn').hide()
   // save the id data to the store.groceryList.id to pass to api
   store.groceryList._id = event.target.dataset.id
+  console.log(event.target.dataset)
   // request get single list from api
   api.groceryListView()
   // if success show the list
@@ -96,6 +99,7 @@ const onGoBack = () => {
   $('.single-list').hide()
   $('#edit-list-section').hide()
   $('.row').hide()
+  $('#empty-list').hide()
 }
 // click to create the new list
 const onGroceryClickCreate = () => {
@@ -114,5 +118,4 @@ module.exports = {
   onGroceryListClickView,
   onGoBack,
   onGroceryClickCreate
-  // readList
 }
