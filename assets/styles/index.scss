@@ -169,10 +169,14 @@ width: 100%;
   position: absolute;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1024px) {
   .content {
     @include make-container;
     clear: both;
+   }
+   .container {
+     clear: right;
+     width: 100%;
    }
   .row {
     @include make-row;
@@ -181,10 +185,20 @@ width: 100%;
   }
   .column {
     margin: 10px 0 0 0;
-    @include make-col(2);
+    @include make-col(4);
     text-align: center;
     color: #8A1215;
   }
+
+  .wrap{
+    margin: 100px auto;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    clear: both;
+  }
+
   body {
   background-size: cover;
   background-position: center;
@@ -207,6 +221,7 @@ body:after{
 }
 
 @media (max-width: 770px) {
+
   h1 {
     font-size: 28px;
     text-align: center;
@@ -318,5 +333,47 @@ width: 100%;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
 }
+
+}
+
+@media(max-width: 376px) {
+  h1 {
+    font-size: 24px;
+  }
+  h4{
+    font-size: 24px;
+  }
+  #message {
+    font-size: 20px;
+    margin-top: 150px;
+    text-align: center;
+  }
+  .column {
+    margin: 10px 0 0 0;
+    @include make-col(12);
+    text-align: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+  #sec-auth {
+    float: none;
+    position: absolute;
+    margin-left: 100px;
+  }
+  #sign-in {
+    float: none;
+  }
+  .wrap{
+    margin: -120px auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    clear: both;
+
+  }
+  .row {
+      border-bottom: solid 2px #dd571c;
+
+  }
 
 }
