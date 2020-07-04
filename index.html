@@ -37,56 +37,69 @@
         </form>
       </section>
         </section>
-
       <section>
-        <div id="ch-pw">
-        <form id="change-pw">
-          <h3>Change Password</h3>
-          <input placeholder="Old Password" type="password"
-          name="passwords[old]" required>
-          <input placeholder="New password" type="password"
-          name="passwords[new]" required>
+          <div id="ch-pw">
+            <form id="change-pw">
+            <h3>Change Password</h3>
+            <input placeholder="Old Password" type="password"
+            name="passwords[old]" required>
+            <input placeholder="New password" type="password"
+            name="passwords[new]" required>
           <button class="button-small salmon_dark rounded3" type="submit">change Password</button>
-        </form>
-      </div>
+          </form>
+        </div>
       </section>
-      <section>
-    <button class="button-small salmon_dark rounded3" id="sign-out">Sign Out</button>
+    <section>
+        <button class="button-small salmon_dark rounded3" id="sign-out">Sign Out</button>
   </section>
-<section class="hide">
-<div class="wrap">
-  <h2>Welcome to Grocery Helper!</h2>
-  <h4>Start create your grocery list before you forget things!</h4>
-<section class="list-controller">
-<button class="btn btn-outline-danger" id="create-list-btn">Create a New List</button>
-</section>
-<section class="flex-list">
-<form id="create-list">
-  <input placeholder="Title" type="text" name="groceryList[title]">
-  <textarea name="groceryList[list]" rows="10" cols="50"></textarea>
-<!-- <input class="list-filed" placeholder="List" type="text" name="groceryList[list]"> -->
-  <button class="btn btn-outline-danger" type="submit">Create List</button>
-</form>
-</section>
-<section class="list-controller">
-<button class="btn btn-outline-danger" id="view-list-btn">View The List</button>
-<section id="edit-list-section">
-  <section class="flex-new-list">
-  <form id="edit-list">
-    <input placeholder="New Title" type="text" name="groceryList[title]">
-    <textarea name="groceryList[list]" rows="10" cols="50"></textarea>
-    <button type="submit">Save New List</button>
-  </form>
+  <section class="title-sec">
+    <form id="title">
+      <h4 class="head">Title here: <span><input placeholder="title" type="text" name="groceryList[title]" required></span></h4>
+      <button id="create-title-btn">Create List</button>
   </section>
-</section>
-<ul class="single-list"></ul>
-<button class="btn btn-outline-danger" id="go-back" type="submit">Go back</button>
-<main>
-  <div id="content" class="content"></div>
-</main>
-</section>
-</div>
-</section>
+  <section class="container">
+    <!--
+    A bootstrap container must have at least one `row`
+    To set the row's height to be 100% of its parent's height we add
+    the bootstrap class `h-100`
+    We also add the `board` class to apply styling.
+    -->
+    <div class="row h-100 board">
+      <!--
+      We want 3 columns. Since bootstrap is a 12 column grid, we set the column
+      width to `4`, because 12 / 3 columns = 4 width.
+      We also add a `box` class to style these divs.
+      -->
+      <div class="col-4 box" data-type="bakery">
+        <img src="public/grocery-icon/bakery.png" alt="" />
+      </div>
+      <div class="col-4 box" data-type="fruits">
+        <img src="public/grocery-icon/fruits.png" alt="" />
+      </div>
+      <div class="col-4 box" data-type="meat">
+        <img src="public/grocery-icon/meat.png" alt="" />
+      </div>
 
+      <div class="col-4 box" data-type="frozen-food">
+        <img src="public/grocery-icon/frozen-food.png" alt="" />
+      </div>
+      <div class="col-4 box" data-type="noodle">
+        <img src="public/grocery-icon/noodle.png" alt="" />
+      </div>
+      <div class="col-4 box" data-type="seafood">
+        <img src="public/grocery-icon/seafood.png" alt="" />
+      </div>
+
+      <div class="col-4 box" data-type="vegetables">
+        <img src="public/grocery-icon/vegetables.png" alt="" />
+      </div>
+      <div class="col-4 box" data-type="drinks">
+        <img src="public/grocery-icon/drinks.png" alt="" />
+      </div>
+      <div class="col-4 box" data-type="ice-cream">
+        <img src="public/grocery-icon/ice-cream.png" alt="" />
+      </div>
+    </div>
+  </section>
     </body>
 </html>
