@@ -56,7 +56,6 @@ const chPwSuccess = function () {
   $('#go-back').hide()
 }
 
-
 const chPwFailure = function () {
   // Show a error message
   $('#change-pw')[0].reset()
