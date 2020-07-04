@@ -6,6 +6,7 @@
 
 ## Important Link
 [grocery-helper Backend gitHub Repo](https://github.com/Nuanjan/grocery-helper-api)
+[grocery-helper-Client-Deployment](https://nuanjan.github.io/grocery-helper-client/)
 
 ## User Story
 * As a user, I want to be able to sign-up to use the grocery-helper.
@@ -22,12 +23,19 @@
 * CSS
 * JavaScript
 * Atom
+* handlebars
+* bootstrap
+
+## Unsolve Problem
+* user will be able to choose the item from the application instead of manually add the list.
+* store the item into the array instead of string literal.
+* user can add and edit amount of the items.
 
 ## Images
 
 ### wireframes
 
-this wireframe is just a planning idea, the layout might look a little bit different on the application.
+this wireframe is a a advance idea that I want to do after I pass this project's requirement . This application will look diferrent from this wireframe.
 
 ![authentication-page](https://i.imgur.com/043ZKUy.png)
 
