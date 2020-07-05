@@ -54,8 +54,8 @@
   </section>
   <section class="title-sec">
     <form id="title">
-      <h4 class="head">Title here: <span><input placeholder="title" type="text" name="groceryList[title]" required></span></h4>
-      <button id="create-title-btn">Create List</button>
+      <h4 class="head btn btn-light">Title here: <span><input placeholder="title" type="text" name="groceryList[title]" required></span></h4>
+      <button class="btn btn-light" id="create-title-btn">Create List</button>
   </section>
   <section class="container">
     <!--
@@ -100,6 +100,71 @@
         <img src="public/grocery-icon/ice-cream.png" alt="" />
       </div>
     </div>
+  </section>
+  <section class="meat-product">
+    <table id="customers">
+  <tr>
+    <th class="w-50">Product Name</th>
+    <th class="w-30">Amount</th>
+    <th class="w-10">less</th>
+    <th class="w-10">more</th>
+  </tr>
+  <tr>
+    <td>Chicken</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ch-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ch-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Beef</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bf-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bf-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Pork</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pk-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Duck</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="dk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="dk-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Turkey</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="tk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="tk-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Sausage</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ss-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ss-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Ham</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="hm-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="hm-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Bacon</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bk-add">+</button></td>
+  </tr>
+  <tr>
+    <td>Lamb</td>
+    <td>0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="lm-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="lm-add">+</button></td>
+  </tr>
+</table>
+<button class="btn btn-success" id="add-title-btn">Add List</button>
   </section>
     </body>
 </html>

@@ -79,7 +79,7 @@ background-size: cover;
 }
 #sec-auth {
   float: right;
-  display: flex;
+  display: none;
   flex-direction: column;
   margin: 30px;
 }
@@ -211,4 +211,35 @@ border-radius: 10px;
 
 .head {
   display:inline-block;
+  color:#234f1e;
+}
+.btn-add-less {
+  border-radius: 10px;
+}
+table {
+  padding: 5px;
+  text-align: center;
+}
+.w-50 {
+  width: 50%
+}
+.w-30 {
+  width: 30%
+}
+.w-10 {
+  width: 10%;
+}
+#add-title-btn {
+width: 30%;
+margin: 10px 200px;
+}
+th {
+  font-size: 28px;
+  color: #234f1e;
+}
+td {
+  color: #234f1e;
+}
+#create-list-btn {
+  color: #234f1e;
 }
