@@ -29,7 +29,9 @@ const itemSuccess = function (response) {
   store.item.itemName = ''
   store.item.amount = 0
   console.log(store.groceryList.items)
+  console.log(store.item)
 }
+
 const itemFailure = function () {
   $('#message').text('Create item failed!')
 }

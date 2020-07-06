@@ -22,7 +22,6 @@ const onGroceryListCreate = function (event) {
 const onGroceryListProduct = function (event) {
   const div = event.target
   const choice = $(div).data('type')
-  console.log(choice)
   switch (choice) {
     case 'meat': {
       $('.menu').hide()
@@ -84,6 +83,8 @@ const onGroceryListProduct = function (event) {
 
 let itemName = store.item.itemName
 let count = store.item.amount
+console.log(store.item.itemName)
+console.log(store.item.amount)
 const onGroceryItemCreateClick = function (event) {
   event.preventDefault()
   const item = event.target
@@ -175,57 +176,60 @@ const onGroceryItemCreateClick = function (event) {
   } else {
     ui.itemFailure()
   }
-  if (addItem === 'hm-add') {
-    itemName = 'ham'
-    count += 1
-    $('#hm-item').text(count)
-    store.item.itemName = itemName
-    store.item.amount = count
-  } else if (addItem === 'hm-less' && $('#hm-item').text() !== '0') {
-    count -= 1
-    $('#hm-item').text(count)
-    store.item.itemName = itemName
-    store.item.amount = count
-  } else {
-    ui.itemFailure()
-  }
-  if (addItem === 'bk-add') {
-    itemName = 'bacon'
-    count += 1
-    $('#bk-item').text(count)
-    store.item.itemName = itemName
-    store.item.amount = count
-  } else if (addItem === 'bk-less' && $('#bk-item').text() !== '0') {
-    count -= 1
-    $('#bk-item').text(count)
-    store.item.itemName = itemName
-    store.item.amount = count
-  } else {
-    ui.itemFailure()
-  }
-  if (addItem === 'la-add') {
-    itemName = 'lamb'
-    count += 1
-    $('#la-item').text(count)
-    store.item.itemName = itemName
-    store.item.amount = count
-  } else if (addItem === 'la-less' && $('#la-item').text() !== '0') {
-    count -= 1
-    $('#la-item').text(count)
-    store.item.itemName = itemName
-    store.item.amount = count
-  } else {
-    ui.itemFailure()
-  }
+    if (addItem === 'hm-add') {
+      itemName = 'ham'
+      count += 1
+      $('#hm-item').text(count)
+      store.item.itemName = itemName
+      store.item.amount = count
+    } else if (addItem === 'hm-less' && $('#hm-item').text() !== '0') {
+      count -= 1
+      $('#hm-item').text(count)
+      store.item.itemName = itemName
+      store.item.amount = count
+    } else {
+      ui.itemFailure()
+    }
+    if (addItem === 'bk-add') {
+      itemName = 'bacon'
+      count += 1
+      $('#bk-item').text(count)
+      store.item.itemName = itemName
+      store.item.amount = count
+    } else if (addItem === 'bk-less' && $('#bk-item').text() !== '0') {
+      count -= 1
+      $('#bk-item').text(count)
+      store.item.itemName = itemName
+      store.item.amount = count
+    } else {
+      ui.itemFailure()
+    }
+    if (addItem === 'la-add') {
+      itemName = 'lamb'
+      count += 1
+      $('#la-item').text(count)
+      store.item.itemName = itemName
+      store.item.amount = count
+    } else if (addItem === 'la-less' && $('#la-item').text() !== '0') {
+      count -= 1
+      $('#la-item').text(count)
+      store.item.itemName = itemName
+      store.item.amount = count
+    } else {
+      ui.itemFailure()
+    }
 }
 
 const onGroceryItemCreate = function (event) {
-  store.item.amount = 0
-  const itemName = store.item.itemName
-  const amount = store.item.amount
-  api.groceryItemCreate(itemName, amount)
-    .then(ui.itemSuccess)
-    .catch(ui.itemFailure)
+  if ($('#ch-item') !== '0') {
+    const itemName = store.item.itemName
+    const amount = store.item.amount
+    api.groceryItemCreate(itemName, amount)
+      .then(ui.itemSuccess)
+      .catch(ui.itemFailure)
+    store.item.itemName = ''
+    store.item.amount = 0
+  }
 }
 
 const onGroceryListIndex = function (event) {
