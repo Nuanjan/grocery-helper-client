@@ -56,7 +56,7 @@ const viewSuccess = (response) => {
   store.groceryList.list = response.groceryList.list
   const lines = store.groceryList.list.split(/\n/g)
   $('.single-list').text(`Title:  ${response.groceryList.title}`).css('color', '#8A1215')
-  for (let i = 0; i < lines.length - 1; i++) {
+  for (let i = 0; i < lines.length; i++) {
     $('.single-list').append('<li>' + lines[i] + '</li>')
   }
   $('.single-list').show()
