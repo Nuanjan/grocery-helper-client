@@ -5,7 +5,6 @@ const createSuccess = function (response) {
   $('form').trigger('reset')
   // Messaging:
   store.groceryList = response.groceryList
-  console.log('this is list we create', store.groceryList)
   $('#message').text('Creat List success')
   //  store.groceryLists = response.groceryLists
   $('.flex-list').hide()
@@ -33,8 +32,7 @@ const removeSuccess = (groceryListId) => {
   $('#message').text('Remove List success!')
 }
 
-const removeFailure = (error) => {
-  console.error(error)
+const removeFailure = () => {
   $('#message').text('Remove List failed!')
 }
 

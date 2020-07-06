@@ -59,7 +59,6 @@ const onGroceryListClickEdit = () => {
 
 const onGroceryListUpdate = (event) => {
   event.preventDefault()
-  console.log(event)
   const form = event.target
   const data = getFormFields(form)
   $('#edit-list').show()
@@ -82,7 +81,6 @@ const onGroceryListClickView = () => {
   $('#view-list-btn').hide()
   // save the id data to the store.groceryList.id to pass to api
   store.groceryList._id = event.target.dataset.id
-  console.log(event.target.dataset)
   // request get single list from api
   api.groceryListView()
   // if success show the list
