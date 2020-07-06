@@ -17,9 +17,6 @@ background-image: url(public/2.jpg);
 background-size: cover;
 }
 
-.btn {
-  margin: 10px;
-}
 
 .button-small{
     color: #fff !important;
@@ -304,4 +301,29 @@ td {
 }
 .menu {
   clear: both;
+}
+.co-title {
+  margin: 10px;
+}
+.co-item {
+  margin: 10px;
+}
+.btn-warning {
+  margin: 20px 5px;
+}
+.row-item {
+  @include make-row;
+}
+.content {
+  @include make-container
+  width: 100%;
+}
+.row {
+  @include make-row;
+  width: 100%;
+}
+.column {
+  @include make-col(3);
+  text-align: center;
+  color: #8A1215;
 }

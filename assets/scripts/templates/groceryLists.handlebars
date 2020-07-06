@@ -1,23 +1,25 @@
 
 {{#each groceryLists as |groceryList|}}
-<div class="container">
   <div class="row" data-id="{{groceryList._id}}">
-      <div class="column">
+      <div class="column co-title">
     <span>Title:&nbsp</span>{{groceryList.title}}
       </div>
       <div class="column">
         {{#each groceryList.items}}
-        <div>itemName:{{itemName}}</div>
-        <div>amount:{{amount}}</div>
+        <div class="container">
+        <div class="row row-item">
+          <p>item:&nbsp{{itemName}}&nbsp</p>
+          <p>amount:{{amount}}</p>
+        </div>
+        </div>
         {{/each}}
       </div>
-      <div class="column">
+      <div class="column co-btn">
         <button class="btn btn-warning edit-list-btn" data-id="{{groceryList._id}}">Edit</button>
         <button class="btn btn-warning view-list-btn" data-id="{{groceryList._id}}">View</button>
         <button class="btn btn-warning delete-list-btn" data-id="{{groceryList._id}}">Remove</button>
       </div>
     </div>
-  </div>
   {{else}}
 <h4>No Grocery List to View!</h4>
 {{/each}}

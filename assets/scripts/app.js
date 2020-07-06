@@ -15,6 +15,7 @@ $(() => {
   $('#sign-out').on('click', credEvent.onCredSignOut)
   $('#title').on('submit', groceryListEvent.onGroceryListCreate)
   $('#go-viewList').on('click', groceryListEvent.onGroceryListIndex)
+  $('#go-createList').on('click', groceryListEvent.onGroceryClickNewCreate)
   $('.btn-add-less').on('click', groceryListEvent.onGroceryItemCreateClick)
   $('#add-btn-ch').on('click', groceryListEvent.onGroceryItemCreate)
   $('#add-btn-bf').on('click', groceryListEvent.onGroceryItemCreate)

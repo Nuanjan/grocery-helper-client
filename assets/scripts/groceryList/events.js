@@ -220,6 +220,7 @@ const onGroceryItemCreateClick = function (event) {
 }
 
 const onGroceryItemCreate = function (event) {
+  store.item.amount = 0
   const itemName = store.item.itemName
   const amount = store.item.amount
   api.groceryItemCreate(itemName, amount)
@@ -308,6 +309,10 @@ const onGroceryClickCreate = () => {
   $('#create-list-btn').hide()
   $('#view-list-btn').hide()
 }
+const onGroceryClickNewCreate = () => {
+  event.preventDefault()
+  $('#title').show()
+}
 module.exports = {
   onGroceryListCreate,
   onGroceryListIndex,
@@ -319,5 +324,6 @@ module.exports = {
   onGroceryClickCreate,
   onGroceryItemCreateClick,
   onGroceryItemCreate,
-  onGroceryListProduct
+  onGroceryListProduct,
+  onGroceryClickNewCreate
 }
