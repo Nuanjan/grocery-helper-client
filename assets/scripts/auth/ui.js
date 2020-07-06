@@ -26,16 +26,17 @@ const signinSuccess = function (response) {
   console.log(store.user)
   $('form').trigger('reset')
   // Messaging:
-  $('.hide').show()
   $('#message').text('Welcome back! ' + response.user.email)
-  $('#create-list-btn').show()
-  $('#view-list-btn').show()
-  $('#sign-in').hide()
-  $('#sign-up').hide()
+  $('#sec-auth').hide()
   $('body').css('background-image', 'url(./../../public/8.jpg)')
   $('h1').hide()
   $('#ch-pw').show()
   $('#sign-out').show()
+  $('.list-product').hide()
+  $('.wrap').show()
+  $('#go-viewList').show()
+  $('#go-createList').show()
+  $('#title').hide()
 }
 
 const signinFailure = function () {

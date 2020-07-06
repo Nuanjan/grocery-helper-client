@@ -8,9 +8,8 @@ const createSuccess = function (response) {
   console.log(store.groceryList)
   $('#message').text('Creat List success')
   //  store.groceryLists = response.groceryLists
-  $('.flex-list').hide()
-  $('#create-list-btn').show()
-  $('#view-list-btn').show()
+  $('.menu').show()
+  $('#title').hide()
 }
 const createFailure = function () {
   $('form').trigger('reset')
@@ -23,10 +22,23 @@ const createFailure = function () {
   $('#view-list-btn').show()
 }
 
+const itemSuccess = function (response) {
+  $('#message').text('Create item success!')
+  console.log(store.item)
+  $('#ch-item').text('0')
+  store.item.itemName = ''
+  store.item.amount = 0
+  console.log(store.groceryList.items)
+}
+const itemFailure = function () {
+  $('#message').text('Create item failed!')
+}
+
 const indexSuccess = (data) => {
-  $('#edit-list-section').hide()
+  console.log(data)
   const showGroceryListsHtml = showGroceryLists({groceryLists: data.groceryLists})
-  $('.content').html(showGroceryListsHtml)
+  $('#content').html(showGroceryListsHtml)
+  $('#message').text('Show grocery List success!')
 }
 const removeSuccess = (groceryListId) => {
   $(`[data-id='${groceryListId}']`).remove()
@@ -68,5 +80,7 @@ module.exports = {
   updateSucccess,
   updateFailure,
   viewSuccess,
-  viewFailure
+  viewFailure,
+  itemSuccess,
+  itemFailure
 }

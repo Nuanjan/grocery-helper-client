@@ -12,8 +12,21 @@ const groceryListCreate = function (data) {
     },
     data: {
       groceryList: {
-        title: data.groceryList.title,
-        list: data.groceryList.list
+        title: data.groceryList.title
+      }
+    }
+  })
+}
+
+const groceryItemCreate = function (itemName, amount) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/items',
+    data: {
+      item: {
+        itemName: itemName,
+        amount: amount,
+        groceryListId: store.groceryList._id
       }
     }
   })
@@ -71,5 +84,6 @@ module.exports = {
   groceryListIndex,
   groceryListRemove,
   groceryListUpdate,
-  groceryListView
+  groceryListView,
+  groceryItemCreate
 }

@@ -1,7 +1,11 @@
 'use strict'
 
 const store = {
-  groceryList: {}
+  groceryList: {},
+  item: {
+    itemName: '',
+    amount: 0
+  }
 }
 
 module.exports = store

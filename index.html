@@ -52,119 +52,699 @@
     <section>
         <button class="button-small salmon_dark rounded3" id="sign-out">Sign Out</button>
   </section>
+  <div class="wrap">
+  <h2>Welcome to Grocery Helper!</h2>
+  <h4>Start create your grocery list before you forget things!</h4>
+  <h4>Put the title to start your list!</h4>
   <section class="title-sec">
     <form id="title">
       <h4 class="head btn btn-light">Title here: <span><input placeholder="title" type="text" name="groceryList[title]" required></span></h4>
-      <button class="btn btn-light" id="create-title-btn">Create List</button>
+      <button class="btn btn-light" id="create-title-btn" type="submit">Create Title</button>
+    </form>
   </section>
-  <section class="container">
-    <!--
-    A bootstrap container must have at least one `row`
-    To set the row's height to be 100% of its parent's height we add
-    the bootstrap class `h-100`
-    We also add the `board` class to apply styling.
-    -->
+  </div>
+  <section class="container menu">
     <div class="row h-100 board">
-      <!--
-      We want 3 columns. Since bootstrap is a 12 column grid, we set the column
-      width to `4`, because 12 / 3 columns = 4 width.
-      We also add a `box` class to style these divs.
-      -->
-      <div class="col-4 box" data-type="bakery">
-        <img src="public/grocery-icon/bakery.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/bakery.png" alt="" data-type="bakery" />
       </div>
-      <div class="col-4 box" data-type="fruits">
-        <img src="public/grocery-icon/fruits.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/fruits.png" alt="" data-type="fruits"/>
       </div>
-      <div class="col-4 box" data-type="meat">
-        <img src="public/grocery-icon/meat.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/meat.png" alt="" data-type="meat"/>
       </div>
 
-      <div class="col-4 box" data-type="frozen-food">
-        <img src="public/grocery-icon/frozen-food.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/frozen-food.png" alt="" data-type="frozen-food"/>
       </div>
-      <div class="col-4 box" data-type="noodle">
-        <img src="public/grocery-icon/noodle.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/noodle.png" alt="" data-type="noodle"/>
       </div>
-      <div class="col-4 box" data-type="seafood">
-        <img src="public/grocery-icon/seafood.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/seafood.png" alt="" data-type="seafood" />
       </div>
-
-      <div class="col-4 box" data-type="vegetables">
-        <img src="public/grocery-icon/vegetables.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/vegetables.png" alt="" data-type="vegetables" />
       </div>
-      <div class="col-4 box" data-type="drinks">
-        <img src="public/grocery-icon/drinks.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/drinks.png" alt="" data-type="drinks" />
       </div>
-      <div class="col-4 box" data-type="ice-cream">
-        <img src="public/grocery-icon/ice-cream.png" alt="" />
+      <div class="col-4 box">
+        <img src="public/grocery-icon/ice-cream.png" alt="" data-type="ice-cream" />
       </div>
     </div>
   </section>
-  <section class="meat-product">
-    <table id="customers">
+  <div class="list-controller">
+  <button class="btn btn-success" id="go-viewList">View Your List</button>
+  <button class="btn btn-success" id="go-createList">Create New List</button>
+  </div>
+  <section class="bakery-product" data-choice="bakery-product">
+  <table>
   <tr>
-    <th class="w-50">Product Name</th>
-    <th class="w-30">Amount</th>
-    <th class="w-10">less</th>
-    <th class="w-10">more</th>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
   </tr>
   <tr>
-    <td>Chicken</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="ch-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="ch-add">+</button></td>
+    <td data-product="flour">Flour</td>
+    <td id="fl-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="fl-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="fl-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-fl">Add Item</button></td>
   </tr>
   <tr>
-    <td>Beef</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="bf-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="bf-add">+</button></td>
+    <td data-product="egg">Egg</td>
+    <td id="eg-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="eg-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="eg-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-eg">Add Item</button></td>
   </tr>
   <tr>
-    <td>Pork</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="pk-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="pk-add">+</button></td>
+    <td data-product="sugar">Sugar</td>
+    <td id="sg-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sg-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sg-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sg">Add Item</button></td>
   </tr>
   <tr>
-    <td>Duck</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="dk-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="dk-add">+</button></td>
+    <td data-product="salt">Salt</td>
+    <td id="sl-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sl-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sl-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sl">Add Item</button></td>
   </tr>
   <tr>
-    <td>Turkey</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="tk-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="tk-add">+</button></td>
+    <td data-product="dairy">Dairy</td>
+    <td id="dr-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="dr-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="dr-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-dr">Add Item</button></td>
   </tr>
   <tr>
-    <td>Sausage</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="ss-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="ss-add">+</button></td>
+    <td data-product="butter">Butter</td>
+    <td id="bt-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bt-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bt-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-bt">Add Item</button></td>
   </tr>
   <tr>
-    <td>Ham</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="hm-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="hm-add">+</button></td>
+    <td  data-product="spices">Spices</td>
+    <td id="sp-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sp-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sp-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sp">Add Item</button></td>
   </tr>
   <tr>
-    <td>Bacon</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="bk-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="bk-add">+</button></td>
+    <td data-product="bread">Bread</td>
+    <td id="bd-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bd-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bd-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-bd">Add Item</button></td>
   </tr>
   <tr>
-    <td>Lamb</td>
-    <td>0</td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="lm-less">-</button></td>
-    <td><button class="btn btn-outline-success btn-add-less" data-id="lm-add">+</button></td>
+    <td data-product="baking-powder">Baking Powder</td>
+    <td id="bp-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bp-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bp-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-bp">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="oil">Oil</td>
+    <td id="oi-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="oi-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="oi-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-oi">Add Item</button></td>
   </tr>
 </table>
-<button class="btn btn-success" id="add-title-btn">Add List</button>
   </section>
+  <section class="fruits-product" data-choice="fruits-product">
+    <table>
+    <tr>
+      <th class="w-30">Product Name</th>
+      <th class="w-25">Amount</th>
+      <th class="w-15">less</th>
+      <th class="w-15">more</th>
+    </tr>
+    <tr>
+      <td data-product="watermelon">Watermelon</td>
+      <td id="wm-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="wm-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="wm-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-wm">Add Item</button></td>
+    </tr>
+    <tr>
+      <td data-product="strawberry">Strawberry</td>
+      <td id="sb-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="sb-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="sb-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-sb">Add Item</button></td>
+    </tr>
+    <tr>
+      <td data-product="cherry">Cherry</td>
+      <td id="cr-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="cr-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="cr-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-cr">Add Item</button></td>
+    </tr>
+    <tr>
+      <td data-product="orange">Orange</td>
+      <td id="or-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="or-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="or-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-or">Add Item</button></td>
+    </tr>
+    <tr>
+      <td data-product="mango">Mango</td>
+      <td id="cb-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="mg-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="mg-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-mg">Add Item</button></td>
+    </tr>
+    <tr>
+      <td data-product="apple">Apple</td>
+      <td id="ap-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="ap-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="ap-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-ap">Add Item</button></td>
+    </tr>
+    <tr>
+      <td  data-product="banana">Banana</td>
+      <td id="bn-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="bn-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="bn-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-bn">Add Item</button></td>
+    </tr>
+    <tr>
+      <td  data-product="lemon">Lemon</td>
+      <td id="lm-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="lm-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="lm-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-lm">Add Item</button></td>
+    </tr>
+    <tr>
+      <td  data-product="pineapple">Pineapple</td>
+      <td id="pp-item">0</td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="pp-less">-</button></td>
+      <td><button class="btn btn-outline-success btn-add-less" data-id="pp-add">+</button></td>
+      <td><button class="btn btn-success" id="add-btn-pp">Add Item</button></td>
+    </tr>
+    </table>
+  </section>
+  <section class="meat-product" data-choice="meat-product">
+    <table>
+  <tr>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
+  </tr>
+  <tr>
+    <td data-product="chicken">Chicken</td>
+    <td id="ch-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ch-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ch-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ch">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="beef">Beef</td>
+    <td id="bf-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bf-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bf-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-bf">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="pork">Pork</td>
+    <td id="pk-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pk-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-pk">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="duck">Duck</td>
+    <td id="dk-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="dk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="dk-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-dk">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="turkey">Turkey</td>
+    <td id="tk-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="tk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="tk-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-tk">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="sausage">Sausage</td>
+    <td id="ss-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ss-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ss-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ss">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="ham">Ham</td>
+    <td id="hm-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="hm-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="hm-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-hm">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="bacon">Bacon</td>
+    <td id="bk-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bk-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-bk">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="lamb">Lamb</td>
+    <td id="la-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="la-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="la-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-la">Add Item</button></td>
+  </tr>
+</table>
+</section>
+<section class="frozen-food-product" data-choice="frozen-food-product">
+<table>
+<tr>
+  <th class="w-30">Product Name</th>
+  <th class="w-25">Amount</th>
+  <th class="w-15">less</th>
+  <th class="w-15">more</th>
+</tr>
+<tr>
+  <td data-product="pizza">Pizza</td>
+  <td id="pz-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="pz-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="pz-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-pz">Add Item</button></td>
+</tr>
+<tr>
+  <td data-product="waffle">Waffle</td>
+  <td id="wf-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="wf-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="wf-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-wf">Add Item</button></td>
+</tr>
+<tr>
+  <td data-product="veggies-frozen">Veggies Frozen</td>
+  <td id="vg-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="vg-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="vg-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-vg">Add Item</button></td>
+</tr>
+<tr>
+  <td data-product="fruits-frozen">Fruits-Frozen</td>
+  <td id="ft-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="ft-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="ft-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-ft">Add Item</button></td>
+</tr>
+<tr>
+  <td data-product="burger-frozen">Berger Frozen</td>
+  <td id="bg-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="bg-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="bg-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-bg">Add Item</button></td>
+</tr>
+<tr>
+  <td data-product="meat-frozen">Meat Frozen</td>
+  <td id="mt-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="mt-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="mt-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-mt">Add Item</button></td>
+</tr>
+<tr>
+  <td  data-product="seafood-frozen">Seafood Frozen</td>
+  <td id="sf-item">0</td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="sf-less">-</button></td>
+  <td><button class="btn btn-outline-success btn-add-less" data-id="sf-add">+</button></td>
+  <td><button class="btn btn-success" id="add-btn-sf">Add Item</button></td>
+</tr>
+</table>
+</section>
+<section class="noodle-product" data-choice="noodle-product">
+  <table>
+  <tr>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
+  </tr>
+  <tr>
+    <td data-product="udon">Udon Noodle</td>
+    <td id="ud-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ud-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ud-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ud">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="soba">Soba</td>
+    <td id="so-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="so-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="so-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-so">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="rice-noodle">Rice Noodle</td>
+    <td id="rn-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="rn-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="rn-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-rn">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="egg-noodle">Egg Noodle</td>
+    <td id="en-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="en-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="en-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-en">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="spaghetti">Spaghetti</td>
+    <td id="spt-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="spt-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="spt-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-spt">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="lasagna">Lasagna</td>
+    <td id="ln-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ln-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ln-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ln">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="macaroni">Macaroni</td>
+    <td id="mn-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="mn-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="mn-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-mn">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="rotini">Rotini</td>
+    <td id="rt-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="rt-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="rt-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-rt">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="rigatoni">Rigatoni</td>
+    <td id="rg-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="rg-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="rg-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-rg">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="conchiglie">Cochiglie</td>
+    <td id="cc-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cc-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cc-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cc">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="farfalle">Farfalle</td>
+    <td id="ff-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ff-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ff-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ff">Add Item</button></td>
+  </tr>
+  </table>
+</section>
+<section class="seafood-product" data-choice="seafood-product">
+  <table>
+  <tr>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
+  </tr>
+  <tr>
+    <td data-product="shirmp">Shirmp</td>
+    <td id="sh-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sh-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sh-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sh">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="salmon">Salmon</td>
+    <td id="sal-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sal-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sal-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sal">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="scallop">Scallop</td>
+    <td id="sc-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sc-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sc-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sc">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="squid">Squid</td>
+    <td id="sq-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sq-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sq-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sq">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="crab">Crab</td>
+    <td id="cra-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cra-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cra-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cra">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="clam">clam</td>
+    <td id="cl-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cl-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cl-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cl">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="mussels">Mussels</td>
+    <td id="ms-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ms-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ms-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ms">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="oyster">Oyster</td>
+    <td id="os-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="os-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="os-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-os">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="lobster">Lobster</td>
+    <td id="lb-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="lb-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="lb-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-lb">Add Item</button></td>
+  </tr>
+  </table>
+</section>
+<section class="vegetables-product" data-choice="vegetables-product">
+  <table>
+  <tr>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
+  </tr>
+  <tr>
+    <td data-product="broccoli">Broccoli</td>
+    <td id="bl-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bl-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="bl-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-bl">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="onion">Onion</td>
+    <td id="on-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="on-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="on-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-on">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="carrot">Carrot</td>
+    <td id="cr-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cr-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cr-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cr">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="pepper">Pepper</td>
+    <td id="pp-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pp-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pp-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-pp">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="potato">Potato</td>
+    <td id="pt-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pt-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="pt-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-pt">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="mushroom">Mushroom</td>
+    <td id="mr-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="mr-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="mr-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-mr">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="celery">Celery</td>
+    <td id="cl-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cl-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cl-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cl">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="green-bean">Green Bean</td>
+    <td id="gb-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="gb-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="gb-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-gb">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="tomato">Tomato</td>
+    <td id="tt-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="tt-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="tt-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-tt">Add Item</button></td>
+  </tr>
+  </table>
+</section>
+<section class="drinks-product" data-choice="drinks-product">
+  <table>
+  <tr>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
+  </tr>
+  <tr>
+    <td data-product="soda">/soda</td>
+    <td id="sd-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sd-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="sd-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-sd">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="water">Water</td>
+    <td id="wt-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="wt-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="wt-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-wt">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="juice">Juice</td>
+    <td id="jc-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="jc-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="jc-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-jc">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="beer">Beer</td>
+    <td id="br-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="br-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="br-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-br">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="liquor">Liquor</td>
+    <td id="lq-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="lq-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="lq-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-lq">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="yogurt-drink">Yogurt Drink</td>
+    <td id="yg-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="yg-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="yg-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-yg">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="milk">Milk</td>
+    <td id="mk-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="mk-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="mk-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-mk">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="tea">Tea</td>
+    <td id="t-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="t-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="t-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-t">Add Item</button></td>
+  </tr>
+  <tr>
+    <td  data-product="coffee">Coffee</td>
+    <td id="cf-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cf-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cf-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cf">Add Item</button></td>
+  </tr>
+  </table>
+</section>
+<section class="ice-cream-product" data-choice="ice-cream-product">
+  <table>
+  <tr>
+    <th class="w-30">Product Name</th>
+    <th class="w-25">Amount</th>
+    <th class="w-15">less</th>
+    <th class="w-15">more</th>
+  </tr>
+  <tr>
+    <td data-product="cones">Cones</td>
+    <td id="cn-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cn-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="cn-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-cn">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="sundae">Sundae</td>
+    <td id="su-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="su-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="su-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-su">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="cake">Cake</td>
+    <td id="ck-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ck-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ck-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ck">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="popsicle">Popsicle</td>
+    <td id="ps-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ps-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="ps-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-ps">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="fruit">Fruit</td>
+    <td id="fr-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="fr-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="fr-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-fr">Add Item</button></td>
+  </tr>
+  <tr>
+    <td data-product="clam">clam</td>
+    <td id="c-item">0</td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="c-less">-</button></td>
+    <td><button class="btn btn-outline-success btn-add-less" data-id="c-add">+</button></td>
+    <td><button class="btn btn-success" id="add-btn-c">Add Item</button></td>
+  </tr>
+  </table>
+</section>
+<main>
+  <div id="content" class="content"></div>
+</main>
+<button class="btn btn-success" id="go-back">Go back To Product</button>
     </body>
 </html>

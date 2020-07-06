@@ -13,7 +13,7 @@ h4 {
   color: #dd571c;
 }
 body{
-background-image: url(public/8.jpg);
+background-image: url(public/2.jpg);
 background-size: cover;
 }
 
@@ -60,7 +60,11 @@ background-size: cover;
 .salmon_dark {
     background: #8A1215;
 }
-
+.wrap {
+  display: none;
+  float: left;
+  margin:10px;
+}
 #sign-up {
   float: right;
   display: flex;
@@ -79,9 +83,13 @@ background-size: cover;
 }
 #sec-auth {
   float: right;
-  display: none;
+  display: flex;
   flex-direction: column;
   margin: 30px;
+}
+#add-item-btn {
+  font-size: 15px;
+  width: 90px;
 }
 img {
     max-width: 100%;
@@ -92,7 +100,7 @@ border: 10px solid #fcd12a;
 border-radius: 10px;
 }
 
-.container {
+.menu {
   // Set the board's container to take up 100 percent of the
   // viewport's height (the height of the browser)
   height: 100vh;
@@ -220,14 +228,14 @@ table {
   padding: 5px;
   text-align: center;
 }
-.w-50 {
-  width: 50%
-}
 .w-30 {
-  width: 30%
+  width: 30%;
 }
-.w-10 {
-  width: 10%;
+.w-25 {
+  width: 20%;
+}
+.w-15 {
+  width: 15%;
 }
 #add-title-btn {
 width: 30%;
@@ -242,4 +250,58 @@ td {
 }
 #create-list-btn {
   color: #234f1e;
+}
+#go-back {
+  display: none;
+  width: 30%;
+  margin: 10px 200px;
+}
+#go-createList {
+  display: none;
+  width: 50%;
+  margin: 5px;
+}
+#go-viewList {
+  display: none;
+  width: 50%;
+  margin: 5px;
+}
+.meat-product {
+  display: none;
+}
+.bakery-product {
+  display: none;
+}
+.fruits-product {
+  display: none;
+}
+.frozen-food-product {
+  display: none;
+}
+.noodle-product {
+  display: none;
+}
+.seafood-product {
+  display: none;
+}
+.vegetables-product {
+  display: none;
+}
+.drinks-product {
+  display: none;
+}
+.ice-cream-product {
+  display: none;
+}
+.btn-controll-list {
+  display: inline;
+}
+.list-controller {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  clear: both;
+}
+.menu {
+  clear: both;
 }
