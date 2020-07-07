@@ -18,20 +18,6 @@ const groceryListCreate = function (data) {
   })
 }
 
-const groceryItemCreate = function (itemName, amount) {
-  return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/items',
-    data: {
-      item: {
-        itemName: itemName,
-        amount: amount,
-        groceryListId: store.groceryList._id
-      }
-    }
-  })
-}
-
 const groceryListIndex = () => {
   console.log(store.user._id)
   return $.ajax({
@@ -84,6 +70,5 @@ module.exports = {
   groceryListIndex,
   groceryListRemove,
   groceryListUpdate,
-  groceryListView,
-  groceryItemCreate
+  groceryListView
 }

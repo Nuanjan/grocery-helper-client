@@ -22,20 +22,6 @@ const createFailure = function () {
   $('#view-list-btn').show()
 }
 
-const itemSuccess = function (response) {
-  $('#message').text('Create item success!')
-  console.log(store.item)
-  $('#ch-item').text('0')
-  store.item.itemName = ''
-  store.item.amount = 0
-  console.log(store.groceryList.items)
-  console.log(store.item)
-}
-
-const itemFailure = function () {
-  $('#message').text('Create item failed!')
-}
-
 const indexSuccess = (data) => {
   console.log(data)
   const showGroceryListsHtml = showGroceryLists({groceryLists: data.groceryLists})
@@ -73,6 +59,7 @@ const viewSuccess = (response) => {
 const viewFailure = () => {
   $('#message').text('View List Failed!')
 }
+
 module.exports = {
   createSuccess,
   createFailure,
@@ -82,7 +69,5 @@ module.exports = {
   updateSucccess,
   updateFailure,
   viewSuccess,
-  viewFailure,
-  itemSuccess,
-  itemFailure
+  viewFailure
 }
