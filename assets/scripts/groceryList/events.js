@@ -91,7 +91,7 @@ const onGroceryListIndex = function (event) {
 
 const onGroceryListRemove = function (event) {
   event.preventDefault()
-  // event.target is the any remove button ffrom handlebars that has data of list id
+  // event.target is the any remove button from handlebars that has data of list id
   const groceryListId = $(event.target).data('id')
 
   // pass data now = the list id
