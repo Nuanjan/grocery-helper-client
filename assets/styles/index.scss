@@ -39,6 +39,10 @@ background-repeat: no-repeat;
 
 .single-list {
 font-size: 28px;
+background-color: white;
+opacity: 80%;
+border: solid 2px #dd571c;
+border-radius: 5%;
 }
 
 .list-controller {
@@ -221,7 +225,6 @@ body:after{
 }
 
 @media (max-width: 770px) {
-
   h1 {
     font-size: 28px;
     text-align: center;
@@ -336,7 +339,7 @@ width: 100%;
 
 }
 
-@media(max-width: 376px) {
+@media(max-width: 375px) {
   h1 {
     font-size: 24px;
   }
@@ -364,7 +367,7 @@ width: 100%;
     float: none;
   }
   .wrap{
-    margin: -120px auto;
+    margin: 150px auto;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -375,5 +378,7 @@ width: 100%;
       border-bottom: solid 2px #dd571c;
 
   }
+
+
 
 }

@@ -1,0 +1,10 @@
+{{#with groceryList}}
+{{log groceryList}}
+<div class="flex-new-list">
+<form id="edit-list">
+  <input>{{groceryList.title}}
+  <textarea name="groceryList[list]" rows="10" cols="50">{{groceryList.list}}</textarea>
+  <button class="btn btn-danger" type="submit">Save New List</button>
+</form>
+</div>
+{{/with}}

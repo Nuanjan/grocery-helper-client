@@ -55,13 +55,15 @@ const onGroceryListClickEdit = () => {
   $('#edit-list').show()
   // save the id data to the store.groceryList.id to pass to api
   store.groceryList._id = event.target.dataset.id
+  api.groceryListView()
+    .then(ui.viewEditSuccess)
+    .catch(ui.viewFailure)
 }
 
 const onGroceryListUpdate = (event) => {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  $('#edit-list').show()
   api.groceryListUpdate(data)
     .then(ui.updateSucccess)
     .catch(ui.updateFailure)
@@ -98,6 +100,7 @@ const onGoBack = () => {
   $('#edit-list-section').hide()
   $('.row').hide()
   $('#empty-list').hide()
+  $('#edit-list').hide()
 }
 // click to create the new list
 const onGroceryClickCreate = () => {
@@ -105,6 +108,7 @@ const onGroceryClickCreate = () => {
   $('.flex-list').show()
   $('#create-list-btn').hide()
   $('#view-list-btn').hide()
+  $('#create-list').show()
 }
 
 module.exports = {

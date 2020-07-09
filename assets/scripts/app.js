@@ -21,4 +21,12 @@ $(() => {
   $('#edit-list').on('submit', groceryListEvent.onGroceryListUpdate)
   $('#go-back').on('click', groceryListEvent.onGoBack)
   $('#create-list-btn').on('click', groceryListEvent.onGroceryClickCreate)
+  $('textarea').on('keyup', function (e) {
+    let t = $(this)
+    switch (e.which) {
+      case 13:
+        t.val(t.val() + '•')
+        return false
+    }
+  })
 })

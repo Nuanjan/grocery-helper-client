@@ -7,7 +7,7 @@ const signupSuccess = function (response) {
   $('form').trigger('reset')
   $('#sign-up').hide()
   // Messaging:
-  $('#message').text('Welcome! ' + response.user.email)
+  $('#message').text('Welcome Please sign in! ' + response.user.email)
 }
 
 const signupFailure = function () {
@@ -15,7 +15,7 @@ const signupFailure = function () {
   // Show a error message
   // Select the message element, change its text, and display it
   // Change the text:
-  $('#message').text('Sorry sign up failed! Try again')
+  $('#message').text('Sorry, This Email might be taken, Try again')
   // Show the element:
   $('#message').show()
   // Remove all the classes, then add the failure class
@@ -23,7 +23,6 @@ const signupFailure = function () {
 const signinSuccess = function (response) {
   // Form reset:
   store.user = response.user
-  console.log(store.user)
   $('form').trigger('reset')
   // Messaging:
   $('.hide').show()
@@ -52,21 +51,21 @@ const chPwSuccess = function () {
   // Form reset:
   $('form').trigger('reset')
   // Messaging:
-  $('#message').text('Password changed! ')
+  $('#message').text('Password changed! ').show().delay(3000).fadeOut()
   $('#go-back').hide()
 }
 
 const chPwFailure = function () {
   // Show a error message
   $('#change-pw')[0].reset()
-  $('#message').text('Password Change Failed, Try agin!')
+  $('#message').text('Password Change Failed, Try agin!').show().delay(3000).fadeOut()
   $('#go-back').hide()
 }
 
 const signoutSuccess = function () {
   $('.row').hide()
   store.user.token = null
-  $('#message').text('Good Bye! ')
+  $('#message').text('Good Bye! ').show().delay(3000).fadeOut()
   $('.wrap').hide()
   $('#ch-pw').hide()
   $('#sign-out').hide()
@@ -75,13 +74,16 @@ const signoutSuccess = function () {
   $('h1').show()
   $('body').css('background-image', 'url(public/2.jpg)')
   $('#go-back').hide()
+  $('#create-list').hide()
+  $('#edit-list').hide()
+  $('.single-list').hide()
 }
 
 const signoutFailure = function () {
   // Show a error message
   // Select the message element, change its text, and display it
   // Change the text:
-  $('#message').text('Sign Out Failed, You still here!')
+  $('#message').text('Sign Out Failed, You still here!').show().delay(3000).fadeOut()
   $('#go-back').hide()
 }
 

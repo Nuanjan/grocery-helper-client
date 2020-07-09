@@ -11,7 +11,7 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+    <body class="body">
       <h1>Grocery-Helper Application</h1>
       <p id="message"></p>
       <section id="sec-auth">
@@ -63,21 +63,21 @@
 <section class="flex-list">
 <form id="create-list">
   <input placeholder="Title" type="text" name="groceryList[title]">
-  <textarea name="groceryList[list]" rows="10" cols="50"></textarea>
+  <textarea name="groceryList[list]" rows="10" cols="50" placeholder="hit enter to add list..."></textarea>
 <!-- <input class="list-filed" placeholder="List" type="text" name="groceryList[list]"> -->
   <button class="btn btn-outline-danger" type="submit">Create List</button>
 </form>
 </section>
 <section class="list-controller">
 <button class="btn btn-outline-danger" id="view-list-btn">View The List</button>
-<section id="edit-list-section">
-  <section class="flex-new-list">
-  <form id="edit-list">
-    <input placeholder="New Title" type="text" name="groceryList[title]">
-    <textarea name="groceryList[list]" rows="10" cols="50"></textarea>
-    <button class="btn btn-danger" type="submit">Save New List</button>
-  </form>
-  </section>
+<section>
+    <div class="flex-new-list">
+    <form id="edit-list">
+      <input id="edit-list-title">
+      <textarea id="edit-list-list" name="groceryList[list]" rows="10" cols="50">{{groceryList.list}}</textarea>
+      <button class="btn btn-danger" type="submit">Save New List</button>
+    </form>
+  </div>
 </section>
 <ul class="single-list"></ul>
 <button class="btn btn-outline-danger" id="go-back" type="submit">Go back</button>
