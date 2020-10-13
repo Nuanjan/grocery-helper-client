@@ -1,8 +1,8 @@
 'use strict'
-// old Heroku deploy: https://pure-thicket-03244.herokuapp.com'
+
 let apiUrl
 const apiUrls = {
-  production: 'mongodb+srv://heroku_5vw14dw6:fTMGk0Gc0Pp0hiSJ@cluster-5vw14dw6.rgewc.mongodb.net/heroku_5vw14dw6?retryWrites=true&w=majority',
+  production: 'https://pure-thicket-03244.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
