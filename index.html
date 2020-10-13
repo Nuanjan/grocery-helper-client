@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Grocery-Helper</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="body">
+      <h1>Grocery-Helper Application</h1>
+      <p id="message"></p>
+      <section id="sec-auth">
+          <form id="sign-up">
+            <h1>Sign Up</h1>
+            <input placeholder="email" type="email"
+            name="credentials[email]" required>
+            <input placeholder="password" type="password"
+            name="credentials[password]" required>
+            <input placeholder="confirm password" type="password"
+            name="credentials[password_confirmation]" required>
+            <button class="button-small salmon_dark rounded3" type="submit">sign up</button>
+          </form>
+
+        <section>
+        <form id="sign-in">
+          <h1>Sign In</h1>
+          <input placeholder="email" type="email"
+          name="credentials[email]" required>
+          <input placeholder="password" type="password"
+          name="credentials[password]" required>
+          <button class="button-small salmon_dark rounded3" type="submit">sign In</button>
+        </form>
+      </section>
+        </section>
+
+      <section>
+        <div id="ch-pw">
+        <form id="change-pw">
+          <h3>Change Password</h3>
+          <input placeholder="Old Password" type="password"
+          name="passwords[old]" required>
+          <input placeholder="New password" type="password"
+          name="passwords[new]" required>
+          <button class="button-small salmon_dark rounded3" type="submit">change Password</button>
+        </form>
+        <section>
+      <button class="button-small salmon_dark rounded3" id="sign-out">Sign Out</button>
+    </section>
+      </div>
+      </section>
+<section class="hide">
+<div class="wrap">
+  <h2>Welcome to Grocery Helper!</h2>
+  <h4>Start create your grocery list before you forget things!</h4>
+<section class="list-controller">
+<button class="btn btn-outline-danger" id="create-list-btn">Create a New List</button>
+</section>
+<section class="flex-list">
+<form id="create-list">
+  <input placeholder="Title" type="text" name="groceryList[title]">
+  <textarea name="groceryList[list]" rows="10" cols="50" placeholder="hit enter to add list..."></textarea>
+<!-- <input class="list-filed" placeholder="List" type="text" name="groceryList[list]"> -->
+  <button class="btn btn-outline-danger" type="submit">Create List</button>
+</form>
+</section>
+<section class="list-controller">
+<button class="btn btn-outline-danger" id="view-list-btn">View The List</button>
+<section>
+    <div class="flex-new-list">
+    <form id="edit-list">
+      <input id="edit-list-title">
+      <textarea id="edit-list-list" name="groceryList[list]" rows="10" cols="50">{{groceryList.list}}</textarea>
+      <button class="btn btn-danger" type="submit">Save New List</button>
+    </form>
+  </div>
+</section>
+<ul class="single-list"></ul>
+<button class="btn btn-outline-danger" id="go-back" type="submit">Go back</button>
+<main>
+  <div id="content" class="content"></div>
+</main>
+</section>
+</div>
+</section>
+
+    </body>
+</html>
