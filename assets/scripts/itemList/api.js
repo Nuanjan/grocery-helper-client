@@ -24,8 +24,23 @@ const itemListIndex = function (viewId) {
     }
   })
 }
+const itemListUpdate = function (amount) {
+  console.log(store.item.id)
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/items/' + store.item.id,
+    data: {
+      item: {
+        itemName: store.item.itemName,
+        amount: amount,
+        groceryListId: store.groceryList._id
+      }
+    }
+  })
+}
 
 module.exports = {
   groceryItemCreate,
-  itemListIndex
+  itemListIndex,
+  itemListUpdate
 }

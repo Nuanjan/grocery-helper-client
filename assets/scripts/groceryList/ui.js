@@ -51,9 +51,13 @@ const updateFailure = () => {
 
 const viewSuccess = (response) => {
   console.log(response)
+  const lines = store.groceryList.list.split(/\n/g)
+  $('.single-list').text(`Title:  ${response.groceryList.title}`).css('color', '#8A1215')
+  for (let i = 0; i < lines.length; i++) {
+    $('.single-list').append('<li>' + lines[i] + '</li>').css('list-style', 'none')
+  }
   $('.single-list').show()
-  $('.single-list').text(`title: ${response.groceryList.title}`).append('<li>list:   ' + response.groceryList.list + '</li>')
-  $('#message').text('View List Success!')
+  $('#message').text('View List Success!').delay(3200).fadeOut(300)
   $('#go-back').show()
 }
 const viewFailure = () => {

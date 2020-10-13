@@ -19,6 +19,7 @@ $(() => {
   $('#go-createList').on('click', groceryListEvent.onGroceryClickNewCreate)
   $('#go-back').on('click', groceryListEvent.ongroceryGoBack)
   $('.box').on('click', groceryListEvent.onGroceryListProduct)
+  $('.content').on('click', '.delete-list-btn', groceryListEvent.onGroceryListRemove)
 
   // ItemList event
   $('.add').on('click', itemListEvent.onItemCreate)

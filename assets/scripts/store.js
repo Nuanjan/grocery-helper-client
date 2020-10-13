@@ -4,6 +4,7 @@ const store = {
   groceryList: {},
   items: [],
   item: {
+    id: '',
     itemName: '',
     amount: 0
   }

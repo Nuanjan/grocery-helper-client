@@ -3,12 +3,11 @@ const store = require('./../store')
 
 const itemSuccess = function (response) {
   $('#message').text('Create item success!')
-  console.log(store.item)
-  $('.amount').text('0')
-  store.item.itemName = ''
-  store.item.amount = 0
-  console.log(store.groceryList.items)
-  console.log(store.item)
+  //  console.log(response.groceryList.items[response.groceryList.items.length - 1])
+  store.items = response.groceryList.items
+  store.item.id = response.groceryList.items[response.groceryList.items.length - 1]._id
+  console.log(store.items)
+  console.log(store.item.id)
 }
 
 const itemFailure = function () {
@@ -18,9 +17,10 @@ const itemFailure = function () {
 const itemIndexSuccess = (response) => {
   store.groceryList = response.groceryList
   for (let i = 0; i < response.groceryList.items.length; i++) {
-    store.items.push(response.groceryList.items[i])
+    // store.items.push(response.groceryList.items[i])
+    console.log(response.groceryList.items[i])
   }
-  $('ul').append(response.groceryList.title)
+  $('.show-items').append(response.groceryList.title)
   for (let i = 0; i < store.items.length; i++) {
     $('.grocery-list').hide()
     $('ul').append('<li>' + store.items[i].itemName + '      ' + store.items[i].amount + '</li>')
